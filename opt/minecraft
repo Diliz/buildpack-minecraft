@@ -41,7 +41,7 @@ case $limit in
 esac
 
 echo "Starting: minecraft ${mc_port}"
-eval "java -Xmx${heap} -Xms${heap} -jar spigot.jar nogui &"
+eval "java -Xmx${heap} -Xms${heap} -jar craftbukkit.jar -o false nogui &"
 main_pid=$!
 
 trap "kill $ngrok_pid $main_pid $sync_pid" SIGTERM
